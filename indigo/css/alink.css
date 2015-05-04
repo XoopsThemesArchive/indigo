@@ -1,0 +1,71 @@
+
+/*-----------超链接样式---------------
+ 说明: 伪类:link :visited :hover分别代表超链接的通常、被访问后、和鼠标接触链接是的样式
+ a标签代表通用超链接样式
+ .main left a 代表XOOPS左导航条菜单超链接样式
+ .footer a 网上最下方版权超链接样式
+------------------------------------*/
+
+
+
+/*a*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #F70;
+}
+a:hover {
+	color: #C60;
+}
+
+
+/* navigation a*/
+
+
+.navigation a{
+	color: #FFF;
+	float: left;
+	font: bold 1.2em "Trebuchet MS",sans-serif;
+	margin-top: 56px;
+	padding: 8px 18px;
+	text-align: center;
+	text-decoration: none;
+}
+.navigation a:hover {
+	background-color: #4A91C3;
+	color: #FFF;
+}
+
+/* main left a*/
+
+.sidenav li a {
+	color: #777;
+	display: block;
+	font-size: 0.9em;
+	padding: 3px 6px 3px 18px;
+	text-decoration: none;
+}
+.sidenav li a:hover {
+	color: #111;
+	background: url(../images/nav_li.gif) no-repeat;
+}
+
+.sidenav a{	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #eee;}
+	
+	
+/* footer a*/
+	
+	
+.footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+.footer a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}

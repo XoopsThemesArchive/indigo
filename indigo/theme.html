@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" />
+<!--<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/themes/MF-06925-A-Indigo/css/style.css" />-->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{$xoops_url}>/backend.php" />
+<!-- RMV: added module header no -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+<script type="text/javascript">
+
+function toggle(notifs_form) 
+{
+obj=document.getElementById(notifs_form);
+obj.style.display=!(obj.style.display=="block")? "block" : "none";  
+}
+
+function swapimage(swap)
+{
+img_plus="<{$xoops_imageurl}>images/plus.gif";
+img_minus="<{$xoops_imageurl}>images/minus.gif";
+obj=document.getElementById(swap);
+obj.src=!(obj.src==img_minus)? img_minus : img_plus;  
+}
+
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="titleon">
+      <h1><a href="<{$xoops_url}>">Very Net</a></h1>
+    </div>
+    <div class="navigation"> <a href="<{$xoops_url}>">Home</a> <a href="<{$xoops_url}>/modules/newbb/">BBS</a> <a href="<{$xoops_url}>/modules/article/">Article</a> <a href="<{$xoops_url}>/modules/xcgal/">Photo</a> <a href="<{$xoops_url}>/modules/wfdownloads/">Down</a>
+      <div class="clearer"><span></span></div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="content"> <{$xoops_contents}> 
+      <{foreach item=block from=$xoops_ccblocks}>
+      <div class="post" id="post-144">
+        <h1><{$block.title}></h1>
+        <div class="entry">
+          <p class="MsoNormal"><{$block.content}>
+</div>
+      </div>
+      <{/foreach}> <br />
+      <table width="100%" cellpadding="0" cellspacing="0" class="bianxing">
+        <tr>
+          <td valign="top"><{foreach item=block from=$xoops_clblocks}>
+            <h1><{$block.title}></h1>
+            <div class="entry"><{$block.content}></div>
+            <{/foreach}> </td>
+          <td width="10px">&nbsp;</td>
+          <td valign="top"><{foreach item=block from=$xoops_crblocks}>
+            <h1><{$block.title}></h1>
+            <div class="entry"><{$block.content}></div>
+            <{/foreach}> </td>
+        </tr>
+      </table>
+    </div>
+    <div class="sidenav"> <{foreach item=block from=$xoops_lblocks}>
+      <h1><{$block.title}></h1>
+      <ul>
+        <li><{$block.content}></li>
+      </ul>
+      <{/foreach}>
+      <h1>Search:</h1>
+      <form action="<{$xoops_url}>/search.php" method="get">
+        <input type="text" name="query" size="14"  />
+        <input type="hidden" name="action" value="results" />
+        <input name="submit" type="submit" class="formbutton" value="<{$smarty.const._SEARCH}>" />
+        <{if $smarty.const.modid > 1}>
+        <input type="hidden" name="mids[]" value="<{$smarty.const.modid}>" />
+        <{/if}>
+      </form>
+      <br />
+    </div>
+    <div class="clearer"><span></span><br />
+    </div>
+  </div>
+</div>
+<div class="footer"><{$xoops_footer}> Theme Design by <a href="http://www.veryw.com">Very Net</a><sup> web2.0</sup></div>
+</body>
+</html>
